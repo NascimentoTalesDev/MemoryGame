@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'roboto', arial, helvetica, sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body h1 {
+  font-size: 3rem;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+  color: #101c2c;
+  width: 50%;
+}
+
+body #gameBoard {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-grid-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
+  -ms-grid-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 10px;
+  width: 50%;
+  margin: auto;
+}
+
+body #gameBoard .card {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  margin-bottom: 5px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  cursor: pointer;
+}
+
+body #gameBoard .card .card_front, body #gameBoard .card .card_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+body #gameBoard .card .card_front {
+  background-color: #101c2c;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+body #gameBoard .card .card_front img {
+  width: 70%;
+}
+
+body #gameBoard .card .card_back {
+  background-color: #05c3ff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+body .flip {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+body #gameOver {
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body #gameOver h1 {
+  font-size: 2.5rem;
+  padding: 20px;
+  width: 90%;
+  text-align: center;
+  color: #fff;
+}
+
+body #gameOver #restart {
+  padding: 10px;
+  font-size: 2rem;
+  background-color: yellow;
+  border: none;
+  margin-top: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+body #gameOver #restart:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+/*# sourceMappingURL=style.css.map */

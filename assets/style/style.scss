@@ -1,0 +1,197 @@
+@import 'sass/colors.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', arial, helvetica, sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    h1{
+        font-size: 3rem;
+        text-align: center;
+        padding: 10px;
+        margin: auto;
+        color: $cardFront;
+        width: 50%;
+    }
+    #gameBoard{
+        display: grid;
+        justify-content: space-evenly;
+        grid-template-columns: auto auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+        width: 50%;
+        margin: auto;
+
+        .card{
+            
+            width: 120px;
+            height: 120px;
+            position: relative;
+            margin-bottom: 5px;
+            transform-style: preserve-3d;
+            
+            justify-content: center;
+            transition: transform 0.5s;
+            cursor: pointer;
+            .card_front, .card_back{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                box-shadow:  $cardShadow;
+    
+                backface-visibility: hidden;
+            }
+    
+            .card_front{
+                background-color: $cardFront;
+                transform: rotateY(180deg);
+                img{
+                    width: 70%
+                }
+            }
+    
+            .card_back{
+                background-color: $cardBack;
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+        }
+
+    }
+
+    
+    .flip{
+        transform: rotateY(180deg);
+        
+    }
+
+    #gameOver{
+        background-color: $backGroundGameOver;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        h1{
+            font-size: 2.5rem;
+            padding: 20px;
+            width: 90%;
+            text-align: center;
+            color: $textColorWhite;
+        }
+
+        #restart{
+            padding: 10px;
+            font-size: 2rem;
+            background-color: $buttonColor;
+            border: none;
+            margin-top: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #restart:active{
+            transform: scale(0.98);
+        }
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+// @media only screen and (min-width: 500px ) {
+
+//     body {
+//     //   background-color: rgb(255, 60, 1);
+
+//       #gameBoard{
+//         display: grid;
+//         justify-content: space-evenly;
+//         grid-template-columns: auto auto auto auto;
+//         grid-template-rows: auto auto auto auto;
+//         column-gap: 5px;
+//         row-gap: 5px;
+//         width: 100%;
+
+//         .card{
+            
+//             width: 110px;
+//             height: 110px;
+//         }
+//         }
+//     }
+// }
+
+// //////////////////////////////////////////////////////////////////////////////
+
+// @media only screen and (min-width: 700px ) {
+//     body {
+//     //   background-color: rgb(60, 255, 1);
+
+//       #gameBoard{
+//         grid-template-columns: auto auto auto auto auto;
+//         grid-template-rows: auto auto auto auto;
+        
+//         .card{
+            
+//             width: 110px;
+//             height: 110px;
+//         }
+//     }
+//     }
+// }
+
+// //////////////////////////////////////////////////////////////////////////////
+
+// @media only screen and (min-width: 900px ) {
+
+//     body{
+//         // background-color: rgb(60, 255, 1);
+        
+//         #gameBoard{
+//             grid-template-columns: auto auto auto auto auto;
+//             grid-template-rows: auto auto auto auto;
+
+//             .card{
+            
+//                 width: 140px;
+//                 height: 140px;
+//             }
+
+//         }
+//     }
+// }
+
+// /////////////////////////////////////////////////////////////////////////////
+
+// @media only screen and (min-width: 1200px ) {
+
+//     body{
+//         // background-color: rgb(48, 1, 255);
+        
+//         #gameBoard{
+//             grid-template-columns: auto auto auto auto auto;
+//             grid-template-rows: auto auto auto auto;
+
+//             .card{
+            
+//                 width: 160px;
+//                 height: 160px;
+//             }
+
+//         }
+//     }
+// }
